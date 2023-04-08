@@ -1,6 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import * as firebaseui from "firebaseui";
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { AuthUI } from "firebaseui";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBH3BN8w-NEtTglYYW3U3vE3cuudfb20h4",
@@ -10,13 +10,16 @@ const firebaseConfig = {
   messagingSenderId: "210724724949",
   appId: "1:210724724949:web:1341c491ce8b094041c25c"
 };
-firebase.initializeApp(firebaseConfig);
+// Initialize Firebase app
+const firebaseApp = initializeApp(firebaseConfig);
 
-const ui = new firebaseui.auth.AuthUI(firebase.auth());
+// Initialize Firebase Authentication UI
+const auth = getAuth(firebaseApp);
+const ui = new AuthUI(auth);
 
 ui.start("#firebaseui-auth-container", {
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    GoogleAuthProvider.PROVIDER_ID
   ],
   // Other configuration options
 });
