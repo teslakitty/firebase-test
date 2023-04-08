@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { initializeApp } from "firebase/compat/app";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/compat/auth";
 import { AuthUI } from "firebaseui";
 
 const firebaseConfig = {
@@ -10,16 +10,30 @@ const firebaseConfig = {
   messagingSenderId: "210724724949",
   appId: "1:210724724949:web:1341c491ce8b094041c25c"
 };
+
 // Initialize Firebase app
 const firebaseApp = initializeApp(firebaseConfig);
 
-// Initialize Firebase Authentication UI
-const auth = getAuth(firebaseApp);
-const ui = new AuthUI(auth);
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
 
-ui.start("#firebaseui-auth-container", {
-  signInOptions: [
-    GoogleAuthProvider.PROVIDER_ID
-  ],
-  // Other configuration options
+const googleSignInButton = document.getElementById("google-signin-button");
+
+googleSignInButton.addEventListener("click", () => {
+  signInWithGoogle();
 });
+
+function signInWithGoogle() {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      console.log(`Logged in as ${user.displayName}`);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error(`Error: ${errorMessage} (${errorCode})`);
+    });
+}

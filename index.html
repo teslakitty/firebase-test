@@ -3,16 +3,14 @@
 <head>
   <title>Firebase Authentication Demo</title>
   <meta charset="UTF-8">
-  <!-- Add Firebase and FirebaseUI scripts -->
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
+  <!-- Add Firebase scripts -->
+  <script src="/firebase/firebase-compat.js"></script>
 </head>
 <body>
+  <button id="google-signin-button">Sign in with Google</button>
   <h1>Firebase Authentication Demo</h1>
   <!-- Add container element for FirebaseUI to render into -->
   <div id="firebaseui-auth-container"></div>
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
