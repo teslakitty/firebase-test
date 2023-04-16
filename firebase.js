@@ -1,4 +1,4 @@
-import './firebase-app.js';
+import './firebase/firebase-app.js';
 import './firebase-firestore.js';
 
 // Your web app's Firebase configuration
