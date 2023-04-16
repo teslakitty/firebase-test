@@ -1,5 +1,5 @@
-import './firebase/firebase-app.js';
-import './firebase-firestore.js';
+import firebase from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js';
+import 'https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
