@@ -1,0 +1,4 @@
+Access to script at 'file:///media/fuse/drivefs-d903b28079b8abe923b5e21a8ad9f619/root/file%20folder/code/firebase.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.
+index.html:9          GET file:///media/fuse/drivefs-d903b28079b8abe923b5e21a8ad9f619/root/file%20folder/code/firebase.js net::ERR_FAILED
+index.html:1 Access to script at 'file:///media/fuse/drivefs-d903b28079b8abe923b5e21a8ad9f619/root/file%20folder/code/script.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.
+index.html:10          GET file:///media/fuse/drivefs-d903b28079b8abe923b5e21a8ad9f619/root/file%20folder/code/script.js net::ERR_FAILED
