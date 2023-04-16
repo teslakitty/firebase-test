@@ -1,6 +1,3 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-
 const firebaseConfig = {
   apiKey: "AIzaSyAosuUU_9XnZsDznwP-Z9kAEjgUH-fvZd4",
   authDomain: "testmeow21.firebaseapp.com",
@@ -11,6 +8,5 @@ const firebaseConfig = {
 };
 
 
-firebase.initializeApp(firebaseConfig);
 
-export default firebase;
+firebase.initializeApp(firebaseConfig);
