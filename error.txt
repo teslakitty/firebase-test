@@ -1,0 +1,4 @@
+Uncaught SyntaxError: Unexpected token 'export' (at firebase-app.js:1590:1)
+firebase-firestore.js:1 Uncaught SyntaxError: Cannot use import statement outside a module (at firebase-firestore.js:1:1)
+script.js:2 Uncaught ReferenceError: firebase is not defined
+    at script.js:2:12

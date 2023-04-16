@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Firebase Test</title>
-  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
-  <script src="firebase.js"></script>
-  <script src="script.js"></script>
+    <meta charset="utf-8">
+    <title>Firebase Test</title>
+    <!-- Import the Firebase App and Firestore scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+    <!-- Import your own script file -->
+    <script src="script.js"></script>
 </head>
-
 <body>
-  <h1>Firebase Test</h1>
-  <form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-    <button type="submit">Submit</button>
-  </form>
-  <br><br>
-  <div id="messages"></div>
+    <h1>Firebase Test</h1>
+    <div>
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput">
+        <button id="submitButton">Submit</button>
+    </div>
+    <div id="output"></div>
 </body>
-
 </html>

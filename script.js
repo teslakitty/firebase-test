@@ -1,30 +1,29 @@
+// Get a reference to the Firestore database service
 const db = firebase.firestore();
-const messageForm = document.querySelector('form');
-const messageContainer = document.getElementById('messages');
 
-messageForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = messageForm.name.value;
-  const message = messageForm.message.value;
+// Get references to the HTML elements
+const nameInput = document.getElementById("nameInput");
+const submitButton = document.getElementById("submitButton");
+const outputDiv = document.getElementById("output");
 
-  db.collection('messages').add({
-    name: name,
-    message: message
-  }).then(() => {
-    console.log('Message added');
-    messageForm.reset();
-  }).catch((error) => {
-    console.log(error);
-  });
-});
-
-db.collection('messages').onSnapshot((snapshot) => {
-  snapshot.docChanges().forEach((change) => {
-    if (change.type === 'added') {
-      const message = change.doc.data();
-      const messageDiv = document.createElement('div');
-      messageDiv.innerHTML = `<h3>${message.name}</h3><p>${message.message}</p>`;
-      messageContainer.appendChild(messageDiv);
-    }
-  });
+// Add a click event listener to the submit button
+submitButton.addEventListener("click", () => {
+    // Get the name from the input field
+    const name = nameInput.value;
+    
+    // Add the name to the database
+    db.collection("names").add({
+        name: name
+    })
+    .then(() => {
+        // Clear the input field
+        nameInput.value = "";
+        
+        // Update the output with a success message
+        outputDiv.innerHTML = "Name added successfully!";
+    })
+    .catch((error) => {
+        // Update the output with an error message
+        outputDiv.innerHTML = `Error adding name: ${error.message}`;
+    });
 });
