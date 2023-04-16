@@ -1,3 +1,7 @@
+const firebase = require("firebase/app");
+require("firebase/firestore");
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyAosuUU_9XnZsDznwP-Z9kAEjgUH-fvZd4",
   authDomain: "testmeow21.firebaseapp.com",
